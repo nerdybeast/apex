@@ -1,6 +1,1 @@
-{
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  }
-}
+{"firestore":{"rules":"firestore.rules","indexes":"firestore.indexes.json"},"flutter":{"platforms":{"android":{"default":{"projectId":"apex-test-5ed98","appId":"1:692577185240:android:4b362d5a4039558fbb16ad","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"apex-test-5ed98","appId":"1:692577185240:ios:6bfc6527316848fcbb16ad","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"apex-test-5ed98","appId":"1:692577185240:ios:6bfc6527316848fcbb16ad","uploadDebugSymbols":true,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"apex-test-5ed98","configurations":{"android":"1:692577185240:android:4b362d5a4039558fbb16ad","ios":"1:692577185240:ios:6bfc6527316848fcbb16ad","macos":"1:692577185240:ios:6bfc6527316848fcbb16ad","web":"1:692577185240:web:4a0437920a1196c6bb16ad","windows":"1:692577185240:web:7e162b3a336748dabb16ad"}}}}}}
