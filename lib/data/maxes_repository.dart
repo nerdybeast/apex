@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/max.dart';
+import '../features/auth/auth_providers.dart';
 import 'firestore_refs.dart';
 
 class MaxesRepository {
@@ -40,3 +41,8 @@ class MaxesRepository {
 
   Future<void> delete(String id) => _col.doc(id).delete();
 }
+
+final maxesRepositoryProvider = Provider<MaxesRepository>((ref) {
+  final uid = ref.watch(currentUserProvider)?.uid ?? '';
+  return MaxesRepository(ref.watch(firestoreProvider), uid);
+});

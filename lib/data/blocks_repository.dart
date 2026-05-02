@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/block.dart';
 import '../domain/enums.dart';
+import '../features/auth/auth_providers.dart';
 import 'firestore_refs.dart';
 
 class BlocksRepository {
@@ -44,3 +45,8 @@ class BlocksRepository {
 
   Future<void> delete(String id) => _col.doc(id).delete();
 }
+
+final blocksRepositoryProvider = Provider<BlocksRepository>((ref) {
+  final uid = ref.watch(currentUserProvider)?.uid ?? '';
+  return BlocksRepository(ref.watch(firestoreProvider), uid);
+});

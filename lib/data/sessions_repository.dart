@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/session.dart';
+import '../features/auth/auth_providers.dart';
 import 'firestore_refs.dart';
 
 class SessionsRepository {
@@ -57,3 +58,8 @@ class SessionsRepository {
 
   Future<void> delete(String id) => _col.doc(id).delete();
 }
+
+final sessionsRepositoryProvider = Provider<SessionsRepository>((ref) {
+  final uid = ref.watch(currentUserProvider)?.uid ?? '';
+  return SessionsRepository(ref.watch(firestoreProvider), uid);
+});

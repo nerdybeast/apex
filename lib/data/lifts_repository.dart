@@ -45,3 +45,8 @@ final liftsRepositoryProvider = Provider<LiftsRepository>(
 final allLiftsProvider = StreamProvider<List<Lift>>(
   (ref) => ref.watch(liftsRepositoryProvider).watchAll(),
 );
+
+final liftsMapProvider = Provider<Map<String, Lift>>((ref) {
+  final lifts = ref.watch(allLiftsProvider).valueOrNull ?? const [];
+  return {for (final l in lifts) l.id: l};
+});

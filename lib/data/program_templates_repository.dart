@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/enums.dart';
 import '../domain/program_template.dart';
@@ -25,10 +24,12 @@ class ProgramTemplatesRepository {
     if (sport != null) {
       q = q.where('sport', isEqualTo: sport.name);
     }
-    return q.snapshots().map((s) => s.docs
-        .map((d) => d.data())
-        .where((t) => t.isPreloaded || t.ownerId == _uid)
-        .toList());
+    return q.snapshots().map(
+      (s) => s.docs
+          .map((d) => d.data())
+          .where((t) => t.isPreloaded || t.ownerId == _uid)
+          .toList(),
+    );
   }
 
   Stream<ProgramTemplate?> watch(String id) =>
