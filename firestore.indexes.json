@@ -1,0 +1,48 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "ownerId", "order": "ASCENDING" },
+        { "fieldPath": "date", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "blockId", "order": "ASCENDING" },
+        { "fieldPath": "weekIndex", "order": "ASCENDING" },
+        { "fieldPath": "dayIndex", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "maxes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "ownerId", "order": "ASCENDING" },
+        { "fieldPath": "liftId", "order": "ASCENDING" },
+        { "fieldPath": "date", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "blocks",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "ownerId", "order": "ASCENDING" },
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "startDate", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "programTemplates",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isPreloaded", "order": "ASCENDING" },
+        { "fieldPath": "sport", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
